@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker 
+
+before_install:
+  - docker build -t rajuas400/docker-react  -f Dockerfile.dev .
+
+script:
+  - docker run rajuas400/docker-react npm run test -- --coverage 
+  
